@@ -17,7 +17,7 @@ function App() {
     const [loading, setLoading] = useState(true); 
     const [stocks, setStocks] = useState([]);
     const [newStock, setNewStock] = useState({ date: '', trade_code: '', high: 0, low: 0, open: 0, close: 0, volume: 0 });
-    const [selectedTradeCode, setSelectedTradeCode] = useState('AAMRATECH'); // Set the default value to "AAMRATECH"
+    const [selectedTradeCode, setSelectedTradeCode] = useState('AAMRATECH'); 
     const [editedStocks, setEditedStocks] = useState({});
     const filteredStocks = useMemo(() => stocks.filter(stock => stock.trade_code === selectedTradeCode), [stocks, selectedTradeCode]);
 
