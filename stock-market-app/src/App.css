@@ -1,22 +1,108 @@
-.styled-table {
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.select, .button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.select:hover, .button:hover {
+  background-color: #0056b3;
+}
+
+.chart-container {
+  margin-bottom: 20px;
   width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #ddd;
+  height: 400px; 
 }
 
-.styled-table th, .styled-table td {
+.stock-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.stock-item {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.stock-item input, .new-stock-form input {
   padding: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
-.styled-table th {
-  background-color: #f2f2f2;
+.delete-button, .update-button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
-.styled-table tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
+.delete-button {
+  background-color: #dc3545;
+  color: #fff;
 }
 
-.styled-table tbody tr:hover {
-  background-color: #ddd;
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.update-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.update-button:hover {
+  background-color: #218838;
+}
+
+.new-stock-form {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  margin-top: 40px; 
+}
+
+.new-stock-form .button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #28a745;
+}
+
+.new-stock-form .button:hover {
+  background-color: #218838;
 }
