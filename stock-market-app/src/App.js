@@ -14,10 +14,10 @@ import {
 import './App.css'; 
 
 function App() {
-    const [loading, setLoading] = useState(true); // State to manage loading status
+    const [loading, setLoading] = useState(true); 
     const [stocks, setStocks] = useState([]);
     const [newStock, setNewStock] = useState({ date: '', trade_code: '', high: 0, low: 0, open: 0, close: 0, volume: 0 });
-    const [selectedTradeCode, setSelectedTradeCode] = useState('AAMRATECH'); // Set the default value to "AAMRATECH"
+    const [selectedTradeCode, setSelectedTradeCode] = useState('AAMRATECH'); 
     const [editedStocks, setEditedStocks] = useState({});
     const filteredStocks = useMemo(() => stocks.filter(stock => stock.trade_code === selectedTradeCode), [stocks, selectedTradeCode]);
 
@@ -27,13 +27,13 @@ function App() {
 
     const fetchStocks = async () => {
         try {
-            setLoading(true); // Set loading to true when fetching starts
+            setLoading(true); 
             const response = await axios.get('https://fahaad.pythonanywhere.com/api/stocks');
             setStocks(response.data);
         } catch (error) {
             console.error('Error fetching stocks:', error);
         } finally {
-            setLoading(false); // Set loading to false when fetching finishes
+            setLoading(false); 
         }
     };
 
@@ -87,7 +87,7 @@ function App() {
     return (
         <div className="container">
             <h1 className="title">Stocks</h1>
-            {loading ? ( // Display loading message if loading is true
+            {loading ? ( 
                 <p>Loading...</p>
             ) : (
                 <>
