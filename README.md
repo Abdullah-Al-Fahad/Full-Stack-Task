@@ -24,5 +24,6 @@ This project is a web application built using **ReactJS** for the frontend and *
 
 ## Live Demo
 
-Check out the live demo of the application: [Live Demo Link](https://janatawifi.vercel.app)
+Check out the live demo of the application: https://janatawifi.vercel.app
+- Wait a moment it might take a while to load.
 
