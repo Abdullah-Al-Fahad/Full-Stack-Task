@@ -1,24 +1,28 @@
-
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .title {
   font-size: 24px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .controls {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .select, .button {
-  margin-right: 10px;
+  margin: 5px;
   padding: 8px 16px;
   border: none;
   border-radius: 4px;
@@ -45,6 +49,7 @@
   margin: 0;
   max-height: 300px;
   overflow-y: auto;
+  width: 100%;
 }
 
 .stock-item {
@@ -53,6 +58,8 @@
   gap: 10px;
   align-items: center;
   margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .stock-item input, .new-stock-form input {
@@ -60,6 +67,8 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .delete-button, .update-button {
@@ -95,6 +104,8 @@
   gap: 10px;
   align-items: center;
   margin-top: 40px; 
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .new-stock-form .button {
@@ -105,4 +116,67 @@
 
 .new-stock-form .button:hover {
   background-color: #218838;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .stock-item {
+      grid-template-columns: repeat(6, 1fr);
+  }
+
+  .new-stock-form {
+      grid-template-columns: repeat(4, 1fr) auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .controls {
+      justify-content: center;
+  }
+
+  .stock-item {
+      grid-template-columns: repeat(5, 1fr);
+  }
+
+  .new-stock-form {
+      grid-template-columns: repeat(3, 1fr) auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .controls {
+      justify-content: center;
+  }
+
+  .stock-item {
+      grid-template-columns: repeat(4, 1fr);
+  }
+
+  .new-stock-form {
+      grid-template-columns: repeat(2, 1fr) auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+      font-size: 20px;
+  }
+
+  .select, .button {
+      padding: 6px 12px;
+      font-size: 14px;
+  }
+
+  .stock-item {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5px;
+  }
+
+  .new-stock-form {
+      grid-template-columns: 1fr auto;
+  }
+
+  .new-stock-form input, .stock-item input {
+      font-size: 12px;
+  }
 }
